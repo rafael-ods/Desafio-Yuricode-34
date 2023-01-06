@@ -1,0 +1,62 @@
+@import '../variables/variables';
+
+
+@mixin font-header {
+    color: $color-white;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem;
+
+    &__logo {
+        display: flex;
+        align-items: flex-start;
+        @include font-header;
+
+
+        &::before {
+            content: '';
+            background: url(../img/logo.png) center / cover no-repeat;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+    }
+
+    .menu {
+        .menu-list {
+            display: flex;
+            column-gap: 48px;
+
+        }
+
+        &__link {
+            @include font-header;
+
+            &:hover {
+                background: $color-yellow-gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .cabecalho {
+       .menu {
+         .menu-list {
+            display: none;
+         }
+       }
+    }
+}

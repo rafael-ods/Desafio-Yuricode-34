@@ -1,0 +1,65 @@
+@import '../variables/variables';
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+
+    .rodape-list {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(../img/bg-icon.png) center / cover no-repeat;
+            width: 80px;
+            height: 80px;
+
+        }
+        &__link {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+        }
+        .instagram {
+            background: url(../img/fi_instagram.png) center / cover no-repeat;
+        }
+        .facebook {
+            background: url(../img/fi_facebook.png) center / cover no-repeat;
+        }
+        .twitter {
+            background: url(../img/fi_twitter.png) center / cover no-repeat;
+        }
+        .email {
+            background: url(../img/fi_mail.png) center / cover no-repeat;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .rodape {
+        padding: 56px 0;
+        .rodape-list {
+            column-gap: 29px;
+            &__item {
+                width: 56px;
+                height: 56px;
+            }
+            &__link{
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .rodape {
+        .rodape-list {
+            column-gap: 15px;
+        }
+    }
+}

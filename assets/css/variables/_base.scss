@@ -1,0 +1,38 @@
+@import 'variables';
+
+
+body {
+    background-color: $bg-color;
+    font-family: $font-primary;
+    font-weight: 400;
+}
+
+
+.container {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.btn {
+    color: $bg-color;
+    background: $color-yellow-gradient;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 64px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .btn {
+        display: block;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+    }
+}

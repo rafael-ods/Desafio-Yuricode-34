@@ -1,0 +1,211 @@
+@import '../variables/variables';
+
+@mixin font-guide {
+    color: $color-white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+@mixin font-guide-span {
+    background: $color-yellow-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+
+.ct-colecionadores {
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__titulo {
+            color: $color-white;
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 48px;
+        }
+
+        &__btn {
+            padding: 12px 32px !important;
+        }
+    }
+
+    .ct-profile {
+        display: grid;
+        grid-template-areas:
+            "colecionador volumes piso items ";
+        grid-template-columns: 1fr repeat(3, auto);
+        column-gap: 130px;
+
+        .profile__titulo {
+            @include font-guide;
+            display: inline-block;
+            margin: 48px 0 63px 0;
+
+            &:nth-child(2) {
+                grid-area: volumes;
+                text-align: center;
+            }
+
+            &:nth-child(3) {
+                grid-area: piso;
+                text-align: center;
+            }
+
+            &:nth-child(4) {
+                grid-area: items;
+                text-align: center;
+
+            }
+        }
+
+        .cards-users {
+            .card-user {
+                display: flex;
+                align-items: center;
+                margin-bottom: 70px;
+
+                &__nome {
+                    @include font-guide;
+                    margin-left: 29px;
+                }
+            }
+        }
+
+    }
+
+    .ct-volumes {
+        .card-volumes {
+
+            margin-bottom: 51px;
+
+            &__eth {
+                @include font-guide;
+                margin-bottom: 19px
+            }
+
+            &__porcentagem {
+                @include font-guide-span;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .items {
+                text-align: center;
+                margin-bottom: 89px;
+            }
+        }
+
+    }
+
+    .btn-colecionadores {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 150px;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ct-colecionadores {
+        .ct-profile {
+            column-gap: 60px;
+
+            .cards-users {
+                .card-user {
+                    &__nome {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .card-volumes {
+                &__eth {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .ct-colecionadores {
+        .box {
+            &__titulo {
+                font-size: 24px;
+                line-height: 29px;
+            }
+
+            &__btn {
+                display: none;
+            }
+        }
+
+        .ct-profile {
+            overflow-x: scroll;
+            column-gap: 110px;
+            &::-webkit-scrollbar{
+                height: 2px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $color-yellow-gradient;
+                border-radius: 5px;
+            }
+            .profile__titulo {
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            .cards-users {
+                .card-user {
+                    margin-bottom: 20px;
+
+                    &__imagem {
+                        width: 32px;
+                        height: 32px;
+                    }
+
+                    &__nome {
+                        font-size: 14px;
+                        line-height: 17px;
+                        margin-left: 12px;
+                    }
+                }
+            }
+
+        }
+
+        .ct-volumes {
+            .card-volumes {
+                margin-bottom: 12px;
+
+                &__eth {
+                    font-size: 12px;
+                    line-height: 15px;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+
+        .ct-volumes {
+            .card-volumes {
+                .items {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+        .btn-colecionadores {
+            display: block;
+            margin-top: 40px;
+        }
+    }
+}

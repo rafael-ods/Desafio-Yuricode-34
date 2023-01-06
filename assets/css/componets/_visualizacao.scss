@@ -1,0 +1,118 @@
+@import '../variables/variables';
+
+@mixin font-list {
+    color: $color-white;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+@mixin border-color {
+    border-left: 1px;
+    border-right: 1px;
+    border-style: solid;
+    border-image: $color-border;
+    border-image-slice: 1;
+}
+
+.ct-visualizacao {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background: url(../img/bg.png) center / cover no-repeat;
+    margin: 0 auto;
+    width: 1216px;
+    height: 210px;
+
+
+
+    .visualizacao-lista {
+        text-align: center;
+        padding: 0 56px;
+
+        .item-number {
+            font-family: $font-secundary;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 59px;
+            margin-bottom: 16px;
+        }
+
+        &__item {
+            @include font-list;
+
+        }
+    }
+
+    .visualizacao-lista:nth-child(1) {
+        padding-right: 0px;
+    }
+
+    .visualizacao-lista:nth-child(2) {
+        @include border-color;
+    }
+
+    .visualizacao-lista:nth-child(3) {
+        @include border-color;
+        padding-left: 0px;
+        border-left: 0px;
+    }
+
+    .visualizacao-lista:nth-child(4) {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .ct-visualizacao {
+        width: 970px;
+        height: 167px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ct-visualizacao {
+        width: 703px;
+        height: 121px;
+
+        .visualizacao-lista {
+            padding: 0px 25px;
+
+            .item-number {
+                font-size: 40px;
+                margin-bottom: 0px;
+            }
+
+            &__item {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .ct-visualizacao {
+        background: url(../img/bg-mobile.png) center / cover no-repeat;
+        width: 312px;
+        height: 120px;
+        overflow-x: scroll;
+
+            .visualizacao-lista {
+                padding: 0;
+            }
+            .visualizacao-lista:nth-child(2), .visualizacao-lista:nth-child(3), .visualizacao-lista:nth-child(4) {
+                display: none;
+            }
+        
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .ct-visualizacao {
+        width: 267px;
+        height: 102px;
+    }
+}
