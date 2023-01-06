@@ -104,7 +104,7 @@ body {
     padding: 1rem 2rem;
   }
   .cabecalho .menu .active {
-    height: 305px;
+    height: 335px;
     visibility: visible;
     overflow-y: auto;
   }
