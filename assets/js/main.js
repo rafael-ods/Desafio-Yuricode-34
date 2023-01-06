@@ -13,3 +13,10 @@ for (let i = 0; i < pergunta.length; i++) {
         }
     })
 }
+
+const menu = document.querySelector('.menu__btn')
+const menuDropDown = document.querySelector('.menu-list')
+
+menu.addEventListener('click' , (e) => {
+    menuDropDown.classList.toggle('active')
+})
